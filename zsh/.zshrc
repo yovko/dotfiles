@@ -127,4 +127,4 @@ eval "$(fzf --zsh)"
 #eval "$(zoxide init --cmd cd zsh)"
 
 # Added by Antigravity
-export PATH="/Users/yovko/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"

@@ -1,0 +1,44 @@
+version = 4
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = false
+
+[[blocks]]
+  type = 'rprompt'
+
+  [[blocks.segments]]
+    template = ' {{ .CurrentDate | date .Format }} '
+    foreground = '#00C5C7'
+    type = 'time'
+    style = 'plain'
+
+    [blocks.segments.options]
+      time_format = '15:04:05'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    template = '{{ .Path }} '
+    foreground = '#77E4F7'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.options]
+      style = 'full'
+
+  [[blocks.segments]]
+    template = '{{ .HEAD }} '
+    foreground = '#FFE700'
+    type = 'git'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '❯ '
+    foreground = '#43D426'
+    type = 'text'
+    style = 'plain'

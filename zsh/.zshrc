@@ -1,8 +1,8 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-OH_MY_POSH_CONFIG="$HOME/.config/myposh.toml"
+OH_MY_POSH_CONFIG="$HOME/.config/omp/powerlevel10k_rich.toml"
 
 [[ -x "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-[[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && eval "$(oh-my-posh init zsh --config $HOME/.config/myposh.toml)"
+[[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && eval "$(oh-my-posh init zsh --config $OH_MY_POSH_CONFIG)"
 
 # Configure zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"

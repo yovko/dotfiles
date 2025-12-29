@@ -1,0 +1,5 @@
+terraform.tfstate*
+.terraform
+.claude
+.orig
+.DS_Store

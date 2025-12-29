@@ -41,14 +41,21 @@ Yovkos-MacBook-Air = "MBA"
       home_icon = '~'
       style = 'full'
 
+#    [blocks.segments.options.mapped_locations]
+#      "~/Developer" = "󰲋"
+#      "~/Documents" = "󰈙"
+#      "~/Downloads" = ""
+#      "~/Music" = "󰝚"
+#      "~/Pictures" = ""
+
   [[blocks.segments]]
     template = ' {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} '
     foreground = '#000000'
     powerline_symbol = ''
-    background = '#4e9a06'
+    background = '#8bc34a'
     type = 'git'
     style = 'powerline'
-    background_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}#c4a000{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f26d50{{ end }}', '{{ if gt .Ahead 0 }}#89d1dc{{ end }}', '{{ if gt .Behind 0 }}#4e9a06{{ end }}']
+    background_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}#fdd835{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f26d50{{ end }}', '{{ if gt .Ahead 0 }}#89d1dc{{ end }}', '{{ if gt .Behind 0 }}#4e9a06{{ end }}']
 
     [blocks.segments.options]
       branch_icon = ' '
@@ -59,31 +66,31 @@ Yovkos-MacBook-Air = "MBA"
   alignment = 'right'
 
   [[blocks.segments]]
-    template = ' {{ .Major }} {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ end }}'
-    foreground = '#6ca35e'
+    template = ':{{ .Major }} {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ end }}'
+    foreground = '#8bc34a'
     type = 'node'
 
     [blocks.segments.options]
       fetch_version = true
 
   [[blocks.segments]]
-    template = ' {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
-    foreground = '#111111'
+    template = ':{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+    foreground = '#26c6da'
     type = 'go'
 
     [blocks.segments.options]
       fetch_version = true
 
   [[blocks.segments]]
-    template = ' {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
-    foreground = '#111111'
+    template = ':{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+    foreground = '#c62828'
     type = 'rust'
 
     [blocks.segments.options]
       fetch_version = true
 
   [[blocks.segments]]
-    template = ' {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}'
+    template = ':{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}'
     foreground = '#111111'
     type = 'python'
 
@@ -92,27 +99,27 @@ Yovkos-MacBook-Air = "MBA"
       fetch_virtual_env = true
 
   [[blocks.segments]]
-    template = ' {{ .Profile }}{{ if .Region }}@{{ .RegionAlias }}{{ end }}'
-    foreground = '#d75f00'
+    template = ':{{ .Profile }}'
+    foreground = '#ff5722'
     type = 'aws'
-    background_templates = ['{{if contains "default" .Profile}}#FFA400{{end}}', '{{if contains "jan" .Profile}}#f1184c{{end}}']
+    background_templates = ['{{if contains "default" .Profile}}#FFA400{{end}}', '{{if contains "yovko" .Profile}}#f1184c{{end}}']
 
     [blocks.segments.options]
       display_default = false
 
   [[blocks.segments]]
-    template = "  {{ .Context }} "
+    template = ":{{ .Context }} "
     foreground = "#0b59e7"
     type = "docker"
 
   [[blocks.segments]]
-    template = ' {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} '
+    template = ':{{.Context}}::{{if .Namespace}}{{.Namespace}}{{else}}default{{end}} '
     foreground = '#eeeeee'
     type = 'kubectl'
 
   [[blocks.segments]]
     template = ' {{ .FormattedMs }}  '
-    foreground = '#c4a000'
+    foreground = '#fdd835'
     type = 'executiontime'
 
     [blocks.segments.options]

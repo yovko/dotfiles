@@ -1,0 +1,38 @@
+#
+# ArchLinux workstation packages list
+#
+# --- System & CLI Essentials ---
+base-devel
+wget
+curl
+git
+readline
+stow
+fzf
+jq
+unzip
+gnupg
+
+# --- Other CLI Tools ---
+bat
+fd
+ripgrep
+shellcheck
+syncthing
+aws-cli
+
+# --- Development ---
+opentofu
+docker
+docker-compose
+
+# --- Terminal & Shell ---
+zsh
+kitty
+oh-my-posh-bin
+
+# --- GUI Apps (Official & AUR) ---
+firefox
+google-chrome
+visual-studio-code-bin
+proton-vpn-gtk-app

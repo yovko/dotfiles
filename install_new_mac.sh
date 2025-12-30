@@ -72,6 +72,11 @@ if [[ "$(uname)" == "Darwin" ]]; then
     # defaults -currentHost write -g AppleFontSmoothing -int 0
 fi
 
+# Stow dotfiles packages
+echo "Stowing dotfiles..."
+cd $DOTFILES_DIR || exit
+stow -t ~ git kitty omp vim zsh
+
 if [ ! -f "$HOME/.hushlogin" ]; then
     touch "$HOME/.hushlogin"
     log_success "Created .hushlogin"

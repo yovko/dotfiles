@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+DOTFILES_DIR="$HOME/.dotfiles"
+REPO_URL="https://github.com/yovko/dotfiles.git"
+
 echo "Installing Debian/Ubuntu packages..."
 
 # Update & Install Basic Tools (APT)
@@ -10,9 +13,8 @@ sudo apt install -y \
     stow \
     gpg
 
-DOTFILES_DIR="$HOME/.dotfiles"
 if [ ! -d "$DOTFILES_DIR" ]; then
-    git clone https://github.com/yovko/dotfiles.git "$DOTFILES_DIR"
+    git clone "$REPO_URL" "$DOTFILES_DIR"
 else
     (cd "$DOTFILES_DIR" && git pull)
 fi
@@ -22,5 +24,10 @@ if ! command -v oh-my-posh &> /dev/null; then
     sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
     sudo chmod +x /usr/local/bin/oh-my-posh
 fi
+
+# Stow dotfiles packages
+echo "Stowing dotfiles..."
+cd $DOTFILES_DIR || exit
+stow -t ~ git omp vim zsh
 
 echo "Debian/Ubuntu server setup complete!"

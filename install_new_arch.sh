@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+DOTFILES_DIR="$HOME/.dotfiles"
+REPO_URL="https://github.com/yovko/dotfiles.git"
+
 echo "Starting Arch Linux setup..."
 
 sudo pacman -Syu --noconfirm
@@ -17,14 +20,18 @@ if ! command -v yay &> /dev/null; then
     rm -rf yay
 fi
 
-DOTFILES_DIR="$HOME/.dotfiles"
 if [ ! -d "$DOTFILES_DIR" ]; then
-    git clone https://github.com/yovko/dotfiles.git "$DOTFILES_DIR"
+    git clone "$REPO_URL" "$DOTFILES_DIR"
 else
     (cd "$DOTFILES_DIR" && git pull)
 fi
 
 # Install packages from list
 yay -S --needed --noconfirm - < "$DOTFILES_DIR/pkglist.txt"
+
+# Stow dotfiles packages
+echo "Stowing dotfiles..."
+cd $DOTFILES_DIR || exit
+stow -t ~ git kitty omp vim zsh
 
 echo "Arch setup complete!"

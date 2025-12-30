@@ -4,7 +4,7 @@
 > This project is still rough around the edges and needs more testing, so proceed with caution.
 
 > [!NOTE]
-> **Note:** These dotfiles are highly customized to my personal workflow based on macOS & Arch Linux worstations and Ubuntu/Debian Linux servers. Please don't open pull requests with breaking changes. If you have different tastes, I recommend forking this repository or copying specific parts into your own setup. I may reject PRs that significantly alter the behavior.
+> These dotfiles are highly customized to my personal workflow based on macOS & Arch Linux worstations and Ubuntu/Debian Linux servers. Please don't open pull requests with breaking changes. If you have different tastes, I recommend forking this repository or copying specific parts into your own setup. I may reject PRs that significantly alter the behavior.
 
 ## Installation
 

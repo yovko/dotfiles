@@ -1,0 +1,45 @@
+version = 4
+
+[[blocks]]
+  type = 'rprompt'
+
+  [[blocks.segments]]
+    template = ' {{ .FormattedMs }} '
+    foreground = '#fdd835'
+    style = 'plain'
+    type = 'executiontime'
+
+    [blocks.segments.options]
+      style = 'round'
+      threshold = 5000
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    template = '{{ .Path }} '
+    foreground = '#77E4F7'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.options]
+      style = 'full'
+
+  [[blocks.segments]]
+    template = '{{ .HEAD }} '
+    foreground = '#FFE700'
+    type = 'git'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '❯ '
+    foreground = '#43D426'
+    type = 'text'
+    style = 'plain'
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = true

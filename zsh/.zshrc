@@ -1,5 +1,5 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-OH_MY_POSH_CONFIG="$HOME/.config/omp/powerlevel10k_rich.toml"
+OH_MY_POSH_CONFIG="$HOME/.config/omp/p10k_rich.toml"
 
 [[ -x "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && eval "$(oh-my-posh init zsh --config $OH_MY_POSH_CONFIG)"
@@ -74,7 +74,9 @@ setopt INTERACTIVE_COMMENTS
 
 # Aliases
 alias c='clear'
+alias s='kitten ssh'
 alias g='git'
+alias gst='git status'
 alias ls='ls --color=auto'
 alias l='ls -CF'
 alias la='ls -A'
@@ -86,19 +88,17 @@ alias fgrep='fgrep --color=auto'
 alias cdd='cd ~/Documents'
 alias dev='cd ~/Developer'
 alias ghost='cd /opt/ghost/'
-alias bl='brew list'
-alias bu='brew update && brew upgrade && brew cleanup && brew doctor'
-alias bi='brew install'
 alias dspa='docker system prune --all'
 alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
-alias s='kitten ssh'
 #alias kubectx='kubectl-ctx'
 #alias kubens='kubectl-ns'
 #alias lse='eza --color=always --long --git --icons=always'
 #alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup)'
-
-# define VSCode as the default text editor
-# export EDITOR="code -w"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias bl='brew list'
+  alias bi='brew install'
+  alias bu='brew update && brew upgrade && brew cleanup && brew doctor'
+fi
 
 # nvm/NodeJS config
 export NVM_DIR="$HOME/.nvm"
@@ -116,6 +116,9 @@ export PATH="$PATH:$HOME/.venv/bin"
 
 # Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+# define VSCode as the default text editor
+# export EDITOR="code -w"
 
 # Load some API keys or similar (if any)
 [ -f "$HOME/.secrets.keys" ] && source "$HOME/.secrets.keys"

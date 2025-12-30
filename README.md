@@ -22,6 +22,6 @@ make
 
 If you prefer to run the scripts manually:
 
-- **macOS Workstation**: ./install_new_mac.sh
-- **Arch Linux Workstation**: ./install_new_arch.sh
-- **Ubuntu/Debian Server**: ./install_new_server.sh
+- **macOS Workstation**: ./set_new_mac.sh
+- **Arch Linux Workstation**: ./set_new_arch.sh
+- **Ubuntu/Debian Server**: ./set_new_server.sh

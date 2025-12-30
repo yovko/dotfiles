@@ -1,13 +1,13 @@
 SHELL := /bin/bash
 .ONESHELL:
-.PHONY: all clean sync install
+.PHONY: all clean install
 
 UNAME_S := $(shell uname -s)
 
 all: install
 
 install:
-	@chmod +x install_new_mac.sh install_new_arch.sh install_new_ubuntu.sh
+	@chmod +x install_new_mac.sh install_new_arch.sh install_new_server.sh
 	@echo "Detected OS: $(UNAME_S)"
 	
 	@if [ "$(UNAME_S)" = "Darwin" ]; then \

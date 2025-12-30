@@ -2,20 +2,6 @@ console_title_template = '{{.UserName}}@{{.HostName}} in {{.PWD}}'
 version = 4
 final_space = true
 
-[upgrade]
-  source = 'cdn'
-  interval = '168h'
-  auto = false
-  notice = true
-
-[maps]
-[maps.host_name]
-Yovkos-MacBook-Air = "MBA"
-
-#[maps.user_name]
-#root = "🚀"
-#yovko = "⚡"
-
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
@@ -30,6 +16,14 @@ Yovkos-MacBook-Air = "MBA"
     style = 'diamond'
 
   [[blocks.segments]]
+    template = '{{ if ne .OS "darwin" }} {{ .UserName }} {{ end }}'
+    foreground = '#f2f3f8'
+    powerline_symbol = ''
+    background = '#d75f00'
+    type = 'session'
+    style = 'powerline'
+
+  [[blocks.segments]]
     template = '  {{ .Path }} '
     foreground = '#e4e4e4'
     powerline_symbol = ''
@@ -39,7 +33,10 @@ Yovkos-MacBook-Air = "MBA"
 
     [blocks.segments.options]
       home_icon = '~'
-      style = 'full'
+#      style = 'full'
+      style = 'agnoster_short'
+      max_depth = 2
+      
 
 #    [blocks.segments.options.mapped_locations]
 #      "~/Developer" = "󰲋"
@@ -99,13 +96,10 @@ Yovkos-MacBook-Air = "MBA"
       fetch_virtual_env = true
 
   [[blocks.segments]]
-    template = ':{{ .Profile }}'
-    foreground = '#ff5722'
-    type = 'aws'
-    background_templates = ['{{if contains "default" .Profile}}#FFA400{{end}}', '{{if contains "yovko" .Profile}}#f1184c{{end}}']
-
-    [blocks.segments.options]
-      display_default = false
+    template = "(nix-{{ .Type }})"
+    style = "powerline"
+    foreground = "blue"
+    type = "nix-shell"
 
   [[blocks.segments]]
     template = ":{{ .Context }} "
@@ -118,12 +112,30 @@ Yovkos-MacBook-Air = "MBA"
     type = 'kubectl'
 
   [[blocks.segments]]
+    template = ":{{ .WorkspaceName }}{{ if .Version }} {{ .Version }}{{ end }}"
+    type = "terraform"
+    foreground = "#ebcc34"
+
+    [blocks.segments.options]
+      command = "tofu"
+
+  [[blocks.segments]]
+    template = ':{{ .Profile }}'
+    foreground = '#ff5722'
+    background_templates = ['{{if contains "default" .Profile}}#FFA400{{end}}', '{{if contains "ydl" .Profile}}#f1184c{{end}}']
+    type = 'aws'
+
+    [blocks.segments.options]
+      display_default = false
+
+  [[blocks.segments]]
     template = ' {{ .FormattedMs }}  '
     foreground = '#fdd835'
     type = 'executiontime'
 
     [blocks.segments.options]
       style = 'round'
+      threshold = 5000
 
   [[blocks.segments]]
     template = ' {{ if gt .Code 0 }}✘{{ else }}✔{{ end }} '
@@ -151,3 +163,16 @@ Yovkos-MacBook-Air = "MBA"
   ]
   background = 'transparent'
   template = '❯ '
+
+[maps]
+[maps.host_name]
+  Yovkos-MacBook-Air = "air"
+  "eos.yovko.net" = "eos"
+[maps.user_name]
+  root = "🚀"
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = true

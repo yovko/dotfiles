@@ -1,22 +1,17 @@
 version = 4
 
-[upgrade]
-  source = 'cdn'
-  interval = '168h'
-  auto = false
-  notice = false
-
 [[blocks]]
   type = 'rprompt'
 
   [[blocks.segments]]
-    template = ' {{ .CurrentDate | date .Format }} '
-    foreground = '#00C5C7'
-    type = 'time'
+    template = ' {{ .FormattedMs }} '
+    foreground = '#fdd835'
     style = 'plain'
+    type = 'executiontime'
 
     [blocks.segments.options]
-      time_format = '15:04:05'
+      style = 'round'
+      threshold = 5000
 
 [[blocks]]
   type = 'prompt'
@@ -42,3 +37,9 @@ version = 4
     foreground = '#43D426'
     type = 'text'
     style = 'plain'
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = true

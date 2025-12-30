@@ -63,7 +63,7 @@ final_space = true
   alignment = 'right'
 
   [[blocks.segments]]
-    template = ':{{ .Major }} {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ end }}'
+    template = ' :{{ .Major }}'
     foreground = '#8bc34a'
     type = 'node'
 
@@ -71,7 +71,7 @@ final_space = true
       fetch_version = true
 
   [[blocks.segments]]
-    template = ':{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+    template = ' :{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
     foreground = '#26c6da'
     type = 'go'
 
@@ -79,7 +79,7 @@ final_space = true
       fetch_version = true
 
   [[blocks.segments]]
-    template = ':{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+    template = ' :{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
     foreground = '#c62828'
     type = 'rust'
 
@@ -87,7 +87,7 @@ final_space = true
       fetch_version = true
 
   [[blocks.segments]]
-    template = ':{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}'
+    template = ' :{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}'
     foreground = '#111111'
     type = 'python'
 
@@ -96,40 +96,39 @@ final_space = true
       fetch_virtual_env = true
 
   [[blocks.segments]]
-    template = "(nix-{{ .Type }})"
-    style = "powerline"
-    foreground = "blue"
-    type = "nix-shell"
+    template = ' (nix-{{ .Type }})'
+    foreground = 'blue'
+    type = 'nix-shell'
 
   [[blocks.segments]]
-    template = ":{{ .Context }} "
-    foreground = "#0b59e7"
-    type = "docker"
+    template = ' :{{ .Context }}'
+    foreground = '#0b59e7'
+    type = 'docker'
 
   [[blocks.segments]]
-    template = ':{{.Context}}::{{if .Namespace}}{{.Namespace}}{{else}}default{{end}} '
+    template = ' :{{.Context}}::{{if .Namespace}}{{.Namespace}}{{else}}default{{end}}'
     foreground = '#eeeeee'
     type = 'kubectl'
 
   [[blocks.segments]]
-    template = ":{{ .WorkspaceName }}{{ if .Version }} {{ .Version }}{{ end }}"
-    type = "terraform"
-    foreground = "#ebcc34"
+    template = ' :{{ .WorkspaceName }}{{ if .Version }} {{ .Version }}{{ end }}'
+    type = 'terraform'
+    foreground = '#ebcc34'
 
     [blocks.segments.options]
-      command = "tofu"
+      command = 'tofu'
 
   [[blocks.segments]]
-    template = ':{{ .Profile }}'
+    template = ' :{{ .Profile }}'
     foreground = '#ff5722'
-    background_templates = ['{{if contains "default" .Profile}}#FFA400{{end}}', '{{if contains "ydl" .Profile}}#f1184c{{end}}']
+    background_templates = ['{{if contains "default" .Profile}}#ffa400{{end}}', '{{if contains "ydl" .Profile}}#f1184c{{end}}']
     type = 'aws'
 
     [blocks.segments.options]
       display_default = false
 
   [[blocks.segments]]
-    template = ' {{ .FormattedMs }}  '
+    template = ' {{ .FormattedMs }} '
     foreground = '#fdd835'
     type = 'executiontime'
 

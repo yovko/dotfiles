@@ -174,4 +174,4 @@ final_space = true
   source = 'cdn'
   interval = '168h'
   auto = false
-  notice = true
+  notice = false

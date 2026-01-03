@@ -72,3 +72,9 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   foreground = 'green'
   background = 'transparent'
   template = '❯❯ '
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = false

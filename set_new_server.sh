@@ -25,6 +25,9 @@ if ! command -v oh-my-posh &> /dev/null; then
     sudo chmod +x /usr/local/bin/oh-my-posh
 fi
 
+# Install MesloLGS NF (Nerd) font
+oh-my-posh font install meslo
+
 # Stow dotfiles packages
 echo "Stowing dotfiles..."
 cd $DOTFILES_DIR || exit

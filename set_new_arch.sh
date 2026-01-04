@@ -29,6 +29,9 @@ fi
 # Install packages from list
 yay -S --needed --noconfirm - < "$DOTFILES_DIR/pkglist.txt"
 
+# Install MesloLGS NF (Nerd) font
+oh-my-posh font install meslo
+
 # Stow dotfiles packages
 echo "Stowing dotfiles..."
 cd $DOTFILES_DIR || exit

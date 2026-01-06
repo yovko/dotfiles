@@ -102,7 +102,7 @@ final_space = true
 
   [[blocks.segments]]
     template = ' :{{ .Context }}'
-    foreground = '#0b59e7'
+    foreground = '#5b86e8'
     type = 'docker'
 
   [[blocks.segments]]

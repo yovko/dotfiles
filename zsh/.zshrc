@@ -16,11 +16,14 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light Aloxaf/fzf-tab
 
-# Add in snippets
-zinit snippet OMZP::aws
+# Add in snippets, libs, etc.
+zinit snippet OMZ::lib/clipboard.zsh
 #zinit snippet OMZP::archlinux
+zinit snippet OMZP::aws
+zinit snippet OMZP::copyfile
 #zinit snippet OMZP::kubectl
 #zinit snippet OMZP::kubectx
+#zinit snippet OMZP::you-should-use
 
 # Load completions
 autoload -U compinit && compinit
@@ -117,22 +120,33 @@ alias ghost='cd /opt/ghost/'
 #alias gcry='git clone --recursive https://github.tools.sap/cloudfoundry/landscape-yovko'
 #alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup)'
 
-# nvm/NodeJS config
+# NodeJS/nvm config
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Python CLI, pyenv & venv setup
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PATH="$HOME/.venv/bin:$PATH"
 
 # add Rust binaries to the PATH
 # export PATH="$PATH:$HOME/.cargo/bin"
 
 # add Go binaries to the PATH
 # export PATH="$PATH:$HOME/go/bin"
-
-# Python CLI
-export PATH="$PATH:$HOME/.venv/bin"
+# export PATH="/opt/homebrew/opt/go@1.23/bin:$PATH"
 
 # Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
 
 # define VSCode as the default text editor
 # export EDITOR="code -w"
@@ -140,7 +154,14 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Load some API keys or similar (if any)
 [ -f "$HOME/.secrets.keys" ] && source "$HOME/.secrets.keys"
 
+# Load some personal helpers
+[ -f "$HOME/Developer/helpers/vault-helper.sh" ] && source "$HOME/Developer/helpers/vault-helper.sh"
+[ -f "$HOME/Developer/helpers/ssh-pass.sh" ] && source "$HOME/Developer/helpers/ssh-pass.sh"
+#[ -f "$HOME/Developer/helpers/python-env.sh" ] && source "$HOME/Developer/helpers/python-env.sh"
+
 # Shell integrations
 # Ctrl+R - fzf on reverse search
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='~~'
 eval "$(fzf --zsh)"
 #eval "$(zoxide init --cmd cd zsh)"

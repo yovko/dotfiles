@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 OH_MY_POSH_CONFIG="$HOME/.config/omp/p10k_rich.toml"
 
 [[ -x "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -34,6 +34,12 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 #zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# FZF shell integration
+# Ctrl+R - fzf on reverse search
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='~~'
+eval "$(fzf --zsh)"
 
 # Disable underlining for valid paths
 ZSH_HIGHLIGHT_STYLES[path]='none'
@@ -118,7 +124,7 @@ alias ghost='cd /opt/ghost/'
 #alias lse='eza --color=always --long --git --icons=always'
 #alias gcrp='git clone --recursive https://github.tools.sap/cloudfoundry/product-cf-hcp'
 #alias gcry='git clone --recursive https://github.tools.sap/cloudfoundry/landscape-yovko'
-#alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup)'
+alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup)'
 
 # NodeJS/nvm config
 export NVM_DIR="$HOME/.nvm"
@@ -126,10 +132,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Python CLI, pyenv & venv setup
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PATH="$HOME/.venv/bin:$PATH"
+#export PYENV_ROOT="$HOME/.pyenv"
+#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+#export PATH="$HOME/.venv/bin:$PATH"
+eval "$(uv generate-shell-completion zsh)"
 
 # add Rust binaries to the PATH
 # export PATH="$PATH:$HOME/.cargo/bin"
@@ -159,9 +166,6 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 [ -f "$HOME/Developer/helpers/ssh-pass.sh" ] && source "$HOME/Developer/helpers/ssh-pass.sh"
 #[ -f "$HOME/Developer/helpers/python-env.sh" ] && source "$HOME/Developer/helpers/python-env.sh"
 
-# Shell integrations
-# Ctrl+R - fzf on reverse search
-# Use ~~ as the trigger sequence instead of the default **
-export FZF_COMPLETION_TRIGGER='~~'
-eval "$(fzf --zsh)"
+# Other shell integrations
 #eval "$(zoxide init --cmd cd zsh)"
+

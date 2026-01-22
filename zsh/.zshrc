@@ -124,18 +124,14 @@ alias ghost='cd /opt/ghost/'
 #alias lse='eza --color=always --long --git --icons=always'
 #alias gcrp='git clone --recursive https://github.tools.sap/cloudfoundry/product-cf-hcp'
 #alias gcry='git clone --recursive https://github.tools.sap/cloudfoundry/landscape-yovko'
-alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup)'
+#alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup)'
 
 # NodeJS/nvm config
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# Python CLI, pyenv & venv setup
-#export PYENV_ROOT="$HOME/.pyenv"
-#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-#export PATH="$HOME/.venv/bin:$PATH"
+# Python setup
 eval "$(uv generate-shell-completion zsh)"
 
 # add Rust binaries to the PATH
@@ -163,7 +159,7 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Load some personal helpers
 [ -f "$HOME/Developer/helpers/vault-helper.sh" ] && source "$HOME/Developer/helpers/vault-helper.sh"
-[ -f "$HOME/Developer/helpers/python-env.sh" ] && source "$HOME/Developer/helpers/python-env.sh"
+#[ -f "$HOME/Developer/helpers/python-env.sh" ] && source "$HOME/Developer/helpers/python-env.sh"
 #[ -f "$HOME/Developer/helpers/ssh-pass.sh" ] && source "$HOME/Developer/helpers/ssh-pass.sh"
 
 # Other shell integrations

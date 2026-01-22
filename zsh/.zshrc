@@ -163,8 +163,8 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Load some personal helpers
 [ -f "$HOME/Developer/helpers/vault-helper.sh" ] && source "$HOME/Developer/helpers/vault-helper.sh"
-[ -f "$HOME/Developer/helpers/ssh-pass.sh" ] && source "$HOME/Developer/helpers/ssh-pass.sh"
-#[ -f "$HOME/Developer/helpers/python-env.sh" ] && source "$HOME/Developer/helpers/python-env.sh"
+[ -f "$HOME/Developer/helpers/python-env.sh" ] && source "$HOME/Developer/helpers/python-env.sh"
+#[ -f "$HOME/Developer/helpers/ssh-pass.sh" ] && source "$HOME/Developer/helpers/ssh-pass.sh"
 
 # Other shell integrations
 #eval "$(zoxide init --cmd cd zsh)"

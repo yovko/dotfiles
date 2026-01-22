@@ -134,15 +134,8 @@ export NVM_DIR="$HOME/.nvm"
 # Python setup
 eval "$(uv generate-shell-completion zsh)"
 
-# add Rust binaries to the PATH
-# export PATH="$PATH:$HOME/.cargo/bin"
-
-# add Go binaries to the PATH
+# Go binaries to the PATH (usially not needed on macOS & brew)
 # export PATH="$PATH:$HOME/go/bin"
-# export PATH="/opt/homebrew/opt/go@1.23/bin:$PATH"
-
-# Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -157,6 +150,9 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # Load some useful stuff
 [ -f "$HOME/.secrets.keys" ] && source "$HOME/.secrets.keys"
 [ -f "$HOME/Developer/helpers/vault-helper.sh" ] && source "$HOME/Developer/helpers/vault-helper.sh"
+
+# Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Other shell integrations
 #eval "$(zoxide init --cmd cd zsh)"

@@ -154,13 +154,9 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # define VSCode as the default text editor
 # export EDITOR="code -w"
 
-# Load some API keys or similar (if any)
+# Load some useful stuff
 [ -f "$HOME/.secrets.keys" ] && source "$HOME/.secrets.keys"
-
-# Load some personal helpers
 [ -f "$HOME/Developer/helpers/vault-helper.sh" ] && source "$HOME/Developer/helpers/vault-helper.sh"
-#[ -f "$HOME/Developer/helpers/python-env.sh" ] && source "$HOME/Developer/helpers/python-env.sh"
-#[ -f "$HOME/Developer/helpers/ssh-pass.sh" ] && source "$HOME/Developer/helpers/ssh-pass.sh"
 
 # Other shell integrations
 #eval "$(zoxide init --cmd cd zsh)"

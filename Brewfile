@@ -1,4 +1,5 @@
 tap "jandedobbeleer/oh-my-posh"
+tap "anomalyco/tap"
 brew "readline"
 brew "awscli"
 brew "bat"
@@ -12,6 +13,7 @@ brew "uv"
 brew "syncthing", restart_service: :changed
 brew "wget"
 brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+brew "anomalyco/tap/opencode"
 cask "adobe-acrobat-reader"
 cask "artisan"
 cask "balenaetcher"

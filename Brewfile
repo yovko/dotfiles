@@ -8,6 +8,7 @@ brew "fzf"
 brew "opentofu"
 brew "shellcheck"
 brew "stow"
+brew "uv"
 brew "syncthing", restart_service: :changed
 brew "wget"
 brew "jandedobbeleer/oh-my-posh/oh-my-posh"

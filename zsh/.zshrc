@@ -115,7 +115,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias bubo='brew update && brew outdated'
   alias bubu='bubo && bup'
   alias bup='brew upgrade'
-  alias bu='brew update && brew upgrade && brew cleanup && brew doctor'
+  alias bu='brew update && brew upgrade && brew cleanup'
 fi
 alias cdd='cd ~/Developer'
 alias ghost='cd /opt/ghost/'

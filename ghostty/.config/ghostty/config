@@ -1,5 +1,5 @@
+shell-integration = zsh
+#font-family = "MesloLGS NF"
+font-size = 14
 term = xterm-256color
 theme = Catppuccin Mocha
-shell-integration = zsh
-font-family = "MesloLGS NF"
-font-size = 14

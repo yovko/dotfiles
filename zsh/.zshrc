@@ -115,10 +115,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias bubo='brew update && brew outdated'
   alias bubu='bubo && bup'
   alias bup='brew upgrade'
-  alias bu='brew update && brew upgrade && brew cleanup && brew doctor'
+  alias bu='brew update && brew upgrade && brew cleanup'
 fi
 alias cdd='cd ~/Developer'
 alias ghost='cd /opt/ghost/'
+alias cleanjunk='find . -type f \( -name ".qicon" -o -name ".apdisk" -o -name ".DS_Store" \) -delete'
 #alias kubectx='kubectl-ctx'
 #alias kubens='kubectl-ns'
 #alias lse='eza --color=always --long --git --icons=always'
@@ -134,15 +135,8 @@ export NVM_DIR="$HOME/.nvm"
 # Python setup
 eval "$(uv generate-shell-completion zsh)"
 
-# add Rust binaries to the PATH
-# export PATH="$PATH:$HOME/.cargo/bin"
-
-# add Go binaries to the PATH
+# Go binaries to the PATH (usially not needed on macOS & brew)
 # export PATH="$PATH:$HOME/go/bin"
-# export PATH="/opt/homebrew/opt/go@1.23/bin:$PATH"
-
-# Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -154,13 +148,12 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # define VSCode as the default text editor
 # export EDITOR="code -w"
 
-# Load some API keys or similar (if any)
+# Load some useful stuff
 [ -f "$HOME/.secrets.keys" ] && source "$HOME/.secrets.keys"
-
-# Load some personal helpers
 [ -f "$HOME/Developer/helpers/vault-helper.sh" ] && source "$HOME/Developer/helpers/vault-helper.sh"
-#[ -f "$HOME/Developer/helpers/python-env.sh" ] && source "$HOME/Developer/helpers/python-env.sh"
-#[ -f "$HOME/Developer/helpers/ssh-pass.sh" ] && source "$HOME/Developer/helpers/ssh-pass.sh"
+
+# Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Other shell integrations
 #eval "$(zoxide init --cmd cd zsh)"

@@ -28,7 +28,7 @@ docker-compose
 
 # --- Terminal & Shell ---
 zsh
-kitty
+ghostty
 oh-my-posh-bin
 
 # --- GUI Apps (Official & AUR) ---

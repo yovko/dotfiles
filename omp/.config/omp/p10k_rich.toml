@@ -88,7 +88,7 @@ final_space = true
 
   [[blocks.segments]]
     template = ' :{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}'
-    foreground = '#111111'
+    foreground = '#ffe873'
     type = 'python'
 
     [blocks.segments.options]

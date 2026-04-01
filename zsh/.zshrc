@@ -83,7 +83,6 @@ setopt INTERACTIVE_COMMENTS
 
 # Aliases
 alias c='clear'
-alias s='kitten ssh'
 alias v='nvim'
 alias g='git'
 alias ga='git add'
@@ -95,11 +94,11 @@ alias ls='ls --color=auto'
 alias l='ls -lh'
 alias la='ls -lah'
 alias ll='ls -lAh'
-alias history='history 1'
+alias h='history 1'
+alias ports='netstat -tulanp'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-alias dps='docker ps'
 alias dpsa='docker ps -a'
 alias dspa='docker system prune --all'
 alias dpu='docker pull'
@@ -125,7 +124,9 @@ alias cleanjunk='find . -type f \( -name ".qicon" -o -name ".apdisk" -o -name ".
 #alias lse='eza --color=always --long --git --icons=always'
 alias gcrp='git clone --recursive https://github.tools.sap/cloudfoundry/product-cf-hcp'
 alias gcry='git clone --recursive https://github.tools.sap/cloudfoundry/landscape-yovko'
-alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup) --image cf.common.repositories.cloud.sap/product-cf-hcp:develop-master'
+alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup)'
+alias product='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup) --image cf.common.reposit
+ories.cloud.sap/product-cf-hcp:develop-master'
 
 # NodeJS/nvm config
 export NVM_DIR="$HOME/.nvm"

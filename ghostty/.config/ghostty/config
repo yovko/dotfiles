@@ -1,3 +1,6 @@
+term = xterm-256color
+shell-integration = zsh
+
 theme = Catppuccin Mocha
 
 #font-family = "MesloLGS NF"
@@ -8,6 +11,10 @@ window-padding-y = 10
 
 background-opacity = 0.95
 
-term = xterm-256color
-shell-integration = zsh
+#quick terminal section
+#keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-screen = mouse
+quick-terminal-autohide = true
 

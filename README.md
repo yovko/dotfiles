@@ -26,9 +26,9 @@ If you prefer to run the scripts manually:
 - **Arch Linux Workstation**: ./set_new_arch.sh
 - **Ubuntu/Debian Server**: ./set_new_server.sh
 
-## Managing dotfiles with GNU stow
+## Managing dotfiles with GNU Stow
 
-This repository is structured to work with GNU stow from the top-level `~/.dotfiles` directory.
+This repository is structured to work with [GNU Stow](https://www.gnu.org/software/stow/) from the top-level `~/.dotfiles` directory.
 
 1. Install GNU stow if it is not already available.
 2. Change into the dotfiles directory.

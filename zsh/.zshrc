@@ -124,9 +124,7 @@ alias cleanjunk='find . -type f \( -name ".qicon" -o -name ".apdisk" -o -name ".
 #alias lse='eza --color=always --long --git --icons=always'
 alias gcrp='git clone --recursive https://github.tools.sap/cloudfoundry/product-cf-hcp'
 alias gcry='git clone --recursive https://github.tools.sap/cloudfoundry/landscape-yovko'
-alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup)'
-alias product='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:develop-master /usr/bin/env startup) --image cf.common.reposit
-ories.cloud.sap/product-cf-hcp:develop-master'
+alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:devcontainer-master /usr/bin/env startup)'
 
 # NodeJS/nvm config
 export NVM_DIR="$HOME/.nvm"

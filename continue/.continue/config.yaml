@@ -2,9 +2,9 @@ name: Local Config
 version: 1.0.0
 schema: v1
 models:
-  - name: LM Studio - Qwen 7B
+  - name: LM Studio
     provider: lmstudio
-    model: qwen2.5-coder-7b
+    model: gemma-4-e4b
     apiBase: http://localhost:1234/v1
     roles:
       - chat

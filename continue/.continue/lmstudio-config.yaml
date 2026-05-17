@@ -1,0 +1,11 @@
+name: Local Config
+version: 1.0.0
+schema: v1
+models:
+  - name: LM Studio
+    provider: lmstudio
+    model: gemma-4-e4b
+    apiBase: http://localhost:1234/v1
+    roles:
+      - chat
+      - edit

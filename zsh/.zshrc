@@ -122,9 +122,9 @@ alias cleanjunk='find . -type f \( -name ".qicon" -o -name ".apdisk" -o -name ".
 #alias kubectx='kubectl-ctx'
 #alias kubens='kubectl-ns'
 #alias lse='eza --color=always --long --git --icons=always'
-alias gcrp='git clone --recursive https://github.tools.sap/cloudfoundry/product-cf-hcp'
-alias gcry='git clone --recursive https://github.tools.sap/cloudfoundry/landscape-yovko'
-alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:devcontainer-master /usr/bin/env startup)'
+#alias gcrp='git clone --recursive https://github.tools.sap/cloudfoundry/product-cf-hcp'
+#alias gcry='git clone --recursive https://github.tools.sap/cloudfoundry/landscape-yovko'
+#alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:devcontainer-master /usr/bin/env startup)'
 
 # NodeJS/nvm config
 export NVM_DIR="$HOME/.nvm"
@@ -134,8 +134,8 @@ export NVM_DIR="$HOME/.nvm"
 # Python setup
 eval "$(uv generate-shell-completion zsh)"
 
-# Go binaries to the PATH (usially not needed on macOS & brew)
-# export PATH="$PATH:$HOME/go/bin"
+# Go binaries to the PATH 
+export PATH="$PATH:/usr/local/go/bin"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -155,9 +155,9 @@ eval "$(uv generate-shell-completion zsh)"
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 export PATH="$HOME/.antigravity-ide/antigravity-ide/bin:$PATH"
 
-# Other shell integrations
-#eval "$(zoxide init --cmd cd zsh)"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/yovko/.lmstudio/bin"
-# End of LM Studio CLI section
+# oMLX: CLI shim path begin
+case ":$PATH:" in
+  *":$HOME/.omlx/bin:"*) ;;
+  *) export PATH="$HOME/.omlx/bin:$PATH" ;;
+esac
+# oMLX: CLI shim path end

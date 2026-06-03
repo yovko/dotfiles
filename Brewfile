@@ -10,7 +10,6 @@ brew "fzf"
 brew "opentofu"
 brew "shellcheck"
 brew "stow"
-brew "go"
 brew "uv"
 brew "syncthing", restart_service: :changed
 brew "wget"

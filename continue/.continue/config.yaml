@@ -10,4 +10,5 @@ models:
     roles:
       - chat
       - edit
+      - apply
       - autocomplete

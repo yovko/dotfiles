@@ -18,3 +18,8 @@ quick-terminal-position = top
 quick-terminal-screen = mouse
 quick-terminal-autohide = true
 
+# Agent Pi uses the Kitty keyboard protocol for reliable
+# modifier key detection.
+# See https://pi.dev/docs/latest/terminal-setup
+keybind = alt+backspace=text:\x1b\x7f
+

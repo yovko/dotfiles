@@ -134,8 +134,9 @@ export NVM_DIR="$HOME/.nvm"
 # Python setup
 eval "$(uv generate-shell-completion zsh)"
 
-# Go binaries to the PATH 
-export PATH="$PATH:/usr/local/go/bin"
+# Go binaries to the PATH (local setup, don't use homebrew) 
+export GOPATH="$HOME/.local/share/go"
+export PATH="$PATH:$GOPATH/bin:/usr/local/go/bin"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -161,3 +162,4 @@ case ":$PATH:" in
   *) export PATH="$HOME/.omlx/bin:$PATH" ;;
 esac
 # oMLX: CLI shim path end
+

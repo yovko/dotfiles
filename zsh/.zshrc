@@ -135,8 +135,9 @@ export NVM_DIR="$HOME/.nvm"
 # Python setup
 eval "$(uv generate-shell-completion zsh)"
 
-# Go binaries to the PATH (usially not needed on macOS & brew)
-# export PATH="$PATH:$HOME/go/bin"
+# Go binaries to the PATH (local setup, don't use homebrew) 
+export GOPATH="$HOME/.local/share/go"
+export PATH="$PATH:$GOPATH/bin:/usr/local/go/bin"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -154,11 +155,12 @@ eval "$(uv generate-shell-completion zsh)"
 
 # Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.antigravity-ide/antigravity-ide/bin:$PATH"
 
-# Other shell integrations
-#eval "$(zoxide init --cmd cd zsh)"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/yovko/.lmstudio/bin"
-# End of LM Studio CLI section
+# oMLX: CLI shim path begin
+case ":$PATH:" in
+  *":$HOME/.omlx/bin:"*) ;;
+  *) export PATH="$HOME/.omlx/bin:$PATH" ;;
+esac
+# oMLX: CLI shim path end
 

@@ -1,12 +1,15 @@
 # LiteLLM doesn't support oMLX yet, but it works like OpenAI server
 # https://docs.litellm.ai/docs/proxy/config_settings
+#
+# Start the litellm proxy with:
+#   litellm --config .litellm_config.yaml --port 4000
 
 model_list:
   # My local AI model (oMLX)
   - model_name: hybrid-coder
     litellm_params:
       model: openai/gemma-4-12b-coder-fable5-composer2.5-4bit # copy the exact name from oMLX
-      api_base: http://localhost:8001/v1
+      api_base: http://localhost:8000/v1
       api_key: "abcd"
       max_tokens: 8192
       timeout: 12

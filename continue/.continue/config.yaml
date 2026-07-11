@@ -7,7 +7,7 @@ models:
   - name: Hybrid Coder (LiteLLM)
     provider: "openai"
     model: "hybrid-coder"
-    apiBase: "http://127.0.0.1:8000/v1"
+    apiBase: "http://127.0.0.1:4000/v1"
     apiKey: "not-needed"
     roles:
       - chat

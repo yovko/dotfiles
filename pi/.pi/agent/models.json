@@ -1,0 +1,28 @@
+{
+  "providers": {
+    "hybrid-gateway": {
+      "baseUrl": "http://127.0.0.1:8000/v1",
+      "api": "openai-completions",
+      "apiKey": "not-needed",
+      "authHeader": true,
+      "models": [
+        {
+          "id": "hybrid-coder",
+          "name": "Hybrid Coder",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 8192
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "lastChangelogVersion": "0.80.6",
+  "defaultProvider": "hybrid-gateway",
+  "defaultModel": "hybrid-coder",
+  "theme": "dark",
+  "packages": [
+    "git:github.com/huggingface/pi-llama"
+  ]
+}

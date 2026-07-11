@@ -122,10 +122,10 @@ alias cleanjunk='find . -type f \( -name ".qicon" -o -name ".apdisk" -o -name ".
 #alias kubectx='kubectl-ctx'
 #alias kubens='kubectl-ns'
 #alias lse='eza --color=always --long --git --icons=always'
-alias gcrp='git clone --recursive https://github.tools.sap/cloudfoundry/product-cf-hcp'
-alias gcry='git clone --recursive https://github.tools.sap/cloudfoundry/landscape-yovko'
-alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:devcontainer-master /usr/bin/env startup)'
-alias ssh='ssh -o SendEnv=VAULT_TOKEN'
+#alias gcrp='git clone --recursive https://github.tools.sap/cloudfoundry/product-cf-hcp'
+#alias gcry='git clone --recursive https://github.tools.sap/cloudfoundry/landscape-yovko'
+#alias product-start='python3 <(docker run --rm cf.common.repositories.cloud.sap/product-cf-hcp:devcontainer-master /usr/bin/env startup)'
+#alias ssh='ssh -o SendEnv=VAULT_TOKEN'
 
 # NodeJS/nvm config
 export NVM_DIR="$HOME/.nvm"

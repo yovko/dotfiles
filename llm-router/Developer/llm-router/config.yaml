@@ -1,0 +1,20 @@
+model_list:
+  # My local inference engine (oMLX)
+  - model_name: hybrid-coder
+    litellm_params:
+      model: openai/gemma-4-12b-coder-fable5-composer2.5-4bit # copy the exact name from oMLX
+      api_base: http://localhost:8001/v1
+      api_key: "abcd"
+      max_tokens: 8192
+      timeout: 15 # Reaction time on startup
+
+  # Cloud LLM as backup
+  - model_name: mistral-backup
+    litellm_params:
+      model: mistral/mistral-medium-latest
+      api_key: "os.environ/MISTRAL_API_KEY" # take the key from the env var
+      max_tokens: 32768
+
+router_settings:
+  fallbacks:
+    - hybrid-coder: ["mistral-backup"]

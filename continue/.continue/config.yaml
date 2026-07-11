@@ -2,11 +2,11 @@ name: Local Config
 version: 1.0.0
 schema: v1
 models:
-  - name: Gemma 4 E4B (oMLX)
+  - name: Hybrid Coder (LiteLLM)
     provider: "openai"
-    model: "gemma-4-e4b-it-4bit"
+    model: "hybrid-coder"
     apiBase: "http://127.0.0.1:8000/v1"
-    apiKey: "abcd"
+    apiKey: "not-needed"
     roles:
       - chat
       - edit

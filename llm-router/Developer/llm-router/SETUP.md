@@ -17,3 +17,5 @@ litellm --config config.yaml --port 8000
 ```
 
 More info: https://docs.litellm.ai/docs/
+
+N.B. Officially LiteLLM doesn't support oMLX yet, but it works. 

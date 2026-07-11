@@ -12,7 +12,6 @@ model_list:
       timeout: 12
       rpm: 15        # max. requests per minute
       tpm: 25000     # max. tokens per minute
-
       model_info:
         max_input_tokens: 8192
         max_output_tokens: 4096

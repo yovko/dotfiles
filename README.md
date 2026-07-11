@@ -57,12 +57,15 @@ For example, to add a new `pi` package with a `models.json` and `settings.json` 
 ```bash
 # Create a subdir for pi in ~/.dotfiles replicating the real structure of subfolders  
 mkdir -p ~/.dotfiles/pi/.pi/agent
+
 # Move the real config files to the newly created subdir
 mv ~/.pi/agent/models.json ~/.dotfiles/pi/.pi/agent/
 mv ~/.pi/agent/settings.json ~/.dotfiles/pi/.pi/agent/
+
 # Test from the root of dotfiles repo
 cd ~/.dotfiles
 stow -nv pi
+
 # If everything is OK make the real links
 stow -v pi
 ```

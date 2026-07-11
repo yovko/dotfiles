@@ -1,5 +1,8 @@
+# LiteLLM doesn't support oMLX yet, but it works like OpenAI server
+# https://docs.litellm.ai/docs/proxy/config_settings
+
 model_list:
-  # My local inference engine (oMLX)
+  # My local AI model (oMLX)
   - model_name: hybrid-coder
     litellm_params:
       model: openai/gemma-4-12b-coder-fable5-composer2.5-4bit # copy the exact name from oMLX

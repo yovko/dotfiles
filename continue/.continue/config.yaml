@@ -1,8 +1,7 @@
+# This config is using LiteLLM router. See litellm/.litellm_config.yaml
 name: Local Config 
 version: 1.0.0
-schema: v1
-# This config is using LiteLLM router to switch between local & cloud models
-# See llm-router/Developer/llm-router configurations
+schema: v1 
 models:
   - name: Hybrid Coder (LiteLLM)
     provider: "openai"

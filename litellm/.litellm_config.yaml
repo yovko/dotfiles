@@ -2,7 +2,8 @@
 # https://docs.litellm.ai/docs/proxy/config_settings
 #
 # Start the litellm proxy with:
-#   litellm --config .litellm_config.yaml --port 4000
+#   litellm --config ~/.litellm_config.yaml --port 4000
+#   nohup litellm --config ~/.litellm_config.yaml --port 4000 > /tmp/litellm.log 2>&1 &
 
 model_list:
   # My local AI model (oMLX)

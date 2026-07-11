@@ -52,13 +52,32 @@ This keeps your home directory clean while still allowing the repo to manage con
 
 If you want to add a new configuration file to a new package, create the package directory inside `~/.dotfiles`, move the file there, and then run `stow` for that package.
 
-For example, to add a new `continue` package with a `.continue/config.yaml` file:
+For example, to add a new `pi` package with a `models.json` and `settings.json` config files:
 
 ```bash
+# Create a subdir for pi in ~/.dotfiles replicating the real structure of subfolders  
+mkdir -p ~/.dotfiles/pi/.pi/agent
+# Move the real config files to the newly created subdir
+mv ~/.pi/agent/models.json ~/.dotfiles/pi/.pi/agent/
+mv ~/.pi/agent/settings.json ~/.dotfiles/pi/.pi/agent/
+# Test from the root of dotfiles repo
 cd ~/.dotfiles
-mkdir -p continue/.continue
-mv ~/.continue/config.yaml ~/.dotfiles/continue/.continue/
-stow continue
+stow -nv pi
+# If everything is OK make the real links
+stow -v pi
 ```
 
-This creates the symlink from `~/.dotfiles/continue/.continue/config.yaml` into your home directory, making the new config active without copying it manually.
+This creates the symlinks from `~/.dotfiles/pi/...`, making the new config active without copying it manually.
+
+```bash
+LINK: .pi/agent/models.json => ../../.dotfiles/pi/.pi/agent/models.json
+LINK: .pi/agent/settings.json => ../../.dotfiles/pi/.pi/agent/settings.json
+```
+
+And don't forget to update the remote repo:
+
+```bash
+git add pi
+git commit -m "Add Pi agent configuration"
+git push origin main
+```

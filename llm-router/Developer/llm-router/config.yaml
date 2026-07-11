@@ -9,7 +9,13 @@ model_list:
       api_base: http://localhost:8001/v1
       api_key: "abcd"
       max_tokens: 8192
-      timeout: 15 # Reaction time on startup
+      timeout: 12
+      rpm: 15        # max. requests per minute
+      tpm: 25000     # max. tokens per minute
+
+      model_info:
+        max_input_tokens: 8192
+        max_output_tokens: 4096
 
   # Cloud LLM as backup
   - model_name: mistral-backup
@@ -17,7 +23,12 @@ model_list:
       model: mistral/mistral-medium-latest
       api_key: "os.environ/MISTRAL_API_KEY" # take the key from the env var
       max_tokens: 32768
+      rpm: 1000
+      tpm: 500000
+      model_info:
+        max_input_tokens: 32768
 
 router_settings:
   fallbacks:
     - hybrid-coder: ["mistral-backup"]
+  context_window_fallback: true

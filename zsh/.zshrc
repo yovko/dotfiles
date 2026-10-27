@@ -119,6 +119,7 @@ fi
 alias cdd='cd ~/Developer'
 alias ghost='cd /opt/ghost/'
 alias cleanjunk='find . -type f \( -name ".qicon" -o -name ".apdisk" -o -name ".DS_Store" \) -delete'
+alias transfer="/Users/yovko/Developer/personal/transfer/transfer.sh"
 #alias kubectx='kubectl-ctx'
 #alias kubens='kubectl-ns'
 #alias lse='eza --color=always --long --git --icons=always'
@@ -164,3 +165,5 @@ case ":$PATH:" in
 esac
 # oMLX: CLI shim path end
 
+# opencode
+export PATH=/Users/yovko/.opencode/bin:$PATH
